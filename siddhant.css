@@ -1,0 +1,983 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff9ef;
+    color: #3d0b12;
+    overflow-x: hidden;
+}
+
+:root {
+    --maroon: #5c0e18;
+    --deep-maroon: #2c050b;
+    --red: #8c1625;
+    --gold: #d4a43a;
+    --light-gold: #f4d77b;
+    --cream: #fff9ef;
+    --muted: #82696c;
+}
+
+
+/* ========================================
+   NAV
+======================================== */
+
+.s-nav {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 20;
+
+    color: white;
+}
+
+.back-btn {
+    padding: 9px 18px;
+
+    border: 1px solid
+        rgba(255,255,255,.3);
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    color: white;
+
+    transition: .3s;
+}
+
+.back-btn:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+.s-logo {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+}
+
+.s-logo span {
+    color: var(--gold);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.s-hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #741827,
+            #3b070e 60%,
+            #210308
+        );
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.hero-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212,164,58,.08);
+
+    filter: blur(50px);
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 30px;
+}
+
+.eyebrow,
+.small-label {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+}
+
+.hero-content h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(80px, 13vw, 150px);
+
+    line-height: .8;
+
+    margin: 30px 0;
+}
+
+.hero-content h1 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px var(--light-gold);
+}
+
+.gold-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 35px auto;
+}
+
+.hero-intro {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.scroll-hint {
+
+    margin-top: 60px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+.scroll-hint span {
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   HEART MESSAGE
+======================================== */
+
+.heart-section {
+
+    padding: 130px 20px;
+
+    background: var(--cream);
+}
+
+.heart-card {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 75px 70px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #ead9b9;
+
+    box-shadow:
+        0 30px 80px
+        rgba(92,14,24,.08);
+}
+
+.heart-card h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(50px, 7vw, 80px);
+
+    line-height: .9;
+
+    color: var(--maroon);
+
+    margin: 25px 0;
+}
+
+.heart-card h2 span {
+
+    display: block;
+
+    color: var(--red);
+}
+
+.message-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 30px auto;
+}
+
+.heart-card p {
+
+    max-width: 650px;
+
+    margin: 20px auto;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2.1;
+}
+
+.highlight-message {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px !important;
+
+    color: var(--maroon) !important;
+
+    margin-top: 35px !important;
+}
+
+
+/* ========================================
+   MEMORY
+======================================== */
+
+.memory-section {
+
+    padding: 130px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    background: #fff;
+}
+
+.memory-photo {
+
+    position: relative;
+
+    max-width: 480px;
+
+    margin: auto;
+}
+
+.memory-photo img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: saturate(.9);
+}
+
+.photo-frame {
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid
+        rgba(255,255,255,.7);
+
+    pointer-events: none;
+}
+
+.memory-content h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(50px, 6vw, 75px);
+
+    line-height: .9;
+
+    color: var(--maroon);
+
+    margin: 25px 0;
+}
+
+.memory-content h2 span {
+
+    color: var(--red);
+}
+
+.memory-content p {
+
+    max-width: 500px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   RAKHI
+======================================== */
+
+.rakhi-section {
+
+    padding: 130px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2c050b,
+            #67111d
+        );
+}
+
+.rakhi-content {
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.rakhi-symbol {
+
+    width: 230px;
+    height: 230px;
+
+    margin: 0 auto 50px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            var(--gold) 0deg 10deg,
+            var(--red) 10deg 20deg
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    animation:
+        slowRotate 20s linear infinite;
+}
+
+.rakhi-ring {
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f5dc80,
+            #a87516
+        );
+
+    border: 10px solid var(--maroon);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.rakhi-center {
+
+    font-size: 45px;
+
+    color: var(--maroon);
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+.rakhi-section h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px, 7vw, 85px);
+
+    line-height: .9;
+
+    margin: 25px 0;
+}
+
+.rakhi-section h2 span {
+
+    display: block;
+
+    color: var(--gold);
+}
+
+.rakhi-section p {
+
+    max-width: 550px;
+
+    margin: auto;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* ========================================
+   PERSONAL NOTE
+======================================== */
+
+.note-section {
+
+    padding: 130px 20px;
+
+    background: var(--cream);
+}
+
+.note-card {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 70px 60px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border:
+        1px solid #ead9b9;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 70px
+        rgba(92,14,24,.08);
+}
+
+.note-top {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--maroon);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin:
+        -95px auto 35px;
+
+    font-size: 20px;
+}
+
+.note-card h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 55px;
+
+    color: var(--maroon);
+
+    margin-bottom: 30px;
+}
+
+.note-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    margin: 18px auto;
+
+    max-width: 550px;
+}
+
+.big-note {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 42px !important;
+
+    color: var(--red) !important;
+
+    margin: 35px 0 !important;
+}
+
+.signature {
+
+    margin-top: 40px;
+
+    color: #9b8587;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+}
+
+.signature strong {
+
+    display: block;
+
+    color: var(--maroon);
+
+    font-size: 30px;
+}
+
+
+/* ========================================
+   FINAL
+======================================== */
+
+.final-section {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #741827,
+            #2c050b
+        );
+
+    color: white;
+}
+
+.final-content {
+
+    max-width: 700px;
+}
+
+.final-rakhi {
+
+    font-size: 55px;
+
+    color: var(--gold);
+
+    margin-bottom: 30px;
+
+    animation:
+        pulse 2s infinite;
+}
+
+.final-section h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px, 8vw, 90px);
+
+    line-height: .9;
+
+    margin-bottom: 30px;
+}
+
+.final-section h2 span {
+
+    display: block;
+
+    color: var(--gold);
+}
+
+.final-section p {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    color:
+        rgba(255,255,255,.6);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.home-btn {
+
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    color: white;
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+.home-btn:hover {
+
+    background: var(--gold);
+
+    color: var(--maroon);
+
+    border-color: var(--gold);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #210308;
+
+    color:
+        rgba(255,255,255,.4);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+footer span {
+
+    color: var(--gold);
+
+    margin-right: 5px;
+}
+
+
+/* ========================================
+   FLOATING HEARTS
+======================================== */
+
+.hearts span {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 5;
+
+    color: var(--gold);
+
+    opacity: .25;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart
+        10s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+    left: 60%;
+    animation-delay: 6s;
+}
+
+.hearts span:nth-child(5) {
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+    left: 85%;
+    animation-delay: 7s;
+}
+
+.hearts span:nth-child(7) {
+    left: 50%;
+    animation-delay: 5s;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .3;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(180deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes slowRotate {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .s-nav {
+        padding: 20px 5%;
+    }
+
+    .memory-section {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        padding:
+            90px 7%;
+    }
+
+    .memory-content {
+        text-align: center;
+    }
+
+    .memory-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .memory-photo {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 75px;
+    }
+
+    .heart-card {
+        padding:
+            55px 25px;
+    }
+
+    .heart-card h2 {
+        font-size: 53px;
+    }
+
+    .note-card {
+        padding:
+            55px 25px;
+    }
+
+    .note-card h2 {
+        font-size: 45px;
+    }
+
+    .rakhi-symbol {
+        width: 190px;
+        height: 190px;
+    }
+
+    .rakhi-ring {
+        width: 110px;
+        height: 110px;
+    }
+
+    .final-section h2 {
+        font-size: 58px;
+    }
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,1410 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff9ef;
+    color: #3a1015;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --maroon: #5b101b;
+    --dark-maroon: #31070d;
+    --red: #8f1825;
+    --gold: #d6a63a;
+    --light-gold: #f4d77b;
+    --cream: #fff9ef;
+    --white: #ffffff;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--dark-maroon);
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-rakhi {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    border: 3px solid var(--gold);
+    border-top-color: transparent;
+
+    animation: rotate 1s linear infinite;
+
+    margin-bottom: 20px;
+}
+
+.loader p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e9c86b;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 80px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    z-index: 1000;
+
+    color: white;
+
+    transition: .3s;
+}
+
+.navbar.scrolled {
+    background: rgba(49, 7, 13, .95);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,.15);
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    color: #fff;
+    opacity: .85;
+
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: var(--light-gold);
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.5);
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: var(--gold);
+    color: var(--dark-maroon);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(150,30,45,.7),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #31070d,
+            #67101d 55%,
+            #420810
+        );
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: .08;
+
+    background-image:
+        radial-gradient(#fff 1px, transparent 1px);
+
+    background-size: 35px 35px;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    opacity: .5;
+
+    animation:
+        floatParticle 8s linear infinite;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    width: 55%;
+
+    margin-left: 8%;
+
+    position: relative;
+    z-index: 5;
+}
+
+.small-title,
+.section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 8vw, 125px);
+
+    line-height: .85;
+
+    margin: 25px 0;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px var(--light-gold);
+
+    text-shadow:
+        0 0 30px rgba(214,166,58,.15);
+}
+
+.hero p {
+    max-width: 520px;
+
+    color: rgba(255,255,255,.7);
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.gold-btn {
+    padding: 15px 27px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #e3bd58,
+        #b8861f
+    );
+
+    color: #35070d;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 30px rgba(214,166,58,.25);
+
+    transition: .3s;
+}
+
+.gold-btn span {
+    margin-left: 8px;
+}
+
+.gold-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(214,166,58,.4);
+}
+
+.outline-btn {
+    padding: 15px 27px;
+
+    border-radius: 40px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    background: transparent;
+
+    color: white;
+
+    transition: .3s;
+}
+
+.outline-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+
+/* =========================
+   RAKHI
+========================= */
+
+.hero-rakhi {
+    position: absolute;
+
+    right: 7%;
+
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: rakhiFloat 5s ease-in-out infinite;
+}
+
+.rakhi-outer {
+    width: 290px;
+    height: 290px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--gold);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 50px rgba(214,166,58,.15),
+        inset 0 0 40px rgba(214,166,58,.1);
+}
+
+.rakhi-outer::before,
+.rakhi-outer::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+.rakhi-outer::before {
+    top: -20px;
+}
+
+.rakhi-outer::after {
+    bottom: -20px;
+}
+
+.rakhi-middle {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            #d6a63a 0deg 8deg,
+            transparent 8deg 16deg
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: rotateSlow 20s linear infinite;
+}
+
+.rakhi-center {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f4d77b,
+            #a87516
+        );
+
+    border: 8px solid #7d1521;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 0 35px rgba(214,166,58,.5);
+}
+
+.rakhi-thread {
+    position: absolute;
+
+    width: 170px;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    top: 50%;
+}
+
+.rakhi-thread.left {
+    left: -80px;
+    transform: rotate(-10deg);
+}
+
+.rakhi-thread.right {
+    right: -80px;
+    transform: rotate(-10deg);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 30px;
+    left: 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    opacity: .6;
+}
+
+.scroll-down div {
+    width: 50px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 140px 20px;
+}
+
+.intro h2,
+.section-heading h2,
+.memory h2,
+.message-box h2,
+.surprise-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 80px);
+
+    line-height: .95;
+
+    margin: 20px 0;
+}
+
+.intro h2 span,
+.section-heading h2 span,
+.memory h2 span,
+.surprise-content h2 span {
+    color: var(--red);
+}
+
+.intro p {
+    color: #76575b;
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+.quote {
+    margin-top: 30px;
+
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+/* =========================
+   BROTHERS
+========================= */
+
+.brothers-section {
+    padding: 120px 7%;
+
+    background: #fff;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.section-heading p {
+    color: #8a7073;
+}
+
+.brothers-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.brother-card {
+    position: relative;
+
+    text-align: center;
+
+    padding: 60px 35px;
+
+    border: 1px solid #eadfd1;
+
+    background: #fffaf3;
+
+    overflow: hidden;
+
+    transition: .5s;
+}
+
+.brother-card:hover {
+    transform: translateY(-12px);
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 25px 60px rgba(91,16,27,.12);
+}
+
+.brother-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            #5b101b,
+            #7e1522
+        );
+
+    color: white;
+
+    transform: translateY(-20px);
+}
+
+.brother-card.featured:hover {
+    transform: translateY(-30px);
+}
+
+.brother-number {
+    position: absolute;
+
+    top: 20px;
+    left: 25px;
+
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+}
+
+.brother-avatar {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    background: #f2dfbd;
+
+    border: 2px solid var(--gold);
+
+    transition: .5s;
+}
+
+.brother-card:hover .brother-avatar {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.brother-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    margin-top: 25px;
+}
+
+.brother-role {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.brother-card p {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #866c70;
+}
+
+.featured p {
+    color: rgba(255,255,255,.65);
+}
+
+.card-line {
+    width: 40px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 25px auto;
+}
+
+.heart {
+    color: var(--gold);
+}
+
+
+/* =========================
+   MEMORY
+========================= */
+
+.memory {
+    background: var(--dark-maroon);
+
+    color: white;
+
+    padding: 130px 8%;
+
+    overflow: hidden;
+}
+
+.memory-content {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+}
+
+.memory h2 span {
+    color: var(--gold);
+}
+
+.memory-left p {
+    max-width: 530px;
+
+    color: rgba(255,255,255,.6);
+
+    line-height: 2;
+
+    font-size: 14px;
+}
+
+.memory-points {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 40px;
+}
+
+.memory-points div {
+    display: flex;
+    flex-direction: column;
+}
+
+.memory-points strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+
+    color: var(--gold);
+}
+
+.memory-points span {
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    opacity: .5;
+}
+
+
+/* =========================
+   BIG RAKHI
+========================= */
+
+.memory-rakhi {
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.big-rakhi {
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            #d6a63a 0deg 10deg,
+            #6e1420 10deg 20deg
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 80px rgba(214,166,58,.2);
+
+    animation: rotateSlow 25s linear infinite;
+}
+
+.big-rakhi-center {
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f4d77b,
+            #a87516
+        );
+
+    border: 10px solid var(--maroon);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    animation: rotateReverse 25s linear infinite;
+}
+
+.ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(214,166,58,.3);
+}
+
+.ring-one {
+    width: 350px;
+    height: 350px;
+}
+
+.ring-two {
+    width: 450px;
+    height: 450px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+    padding: 140px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff4d9,
+            #fff9ef
+        );
+}
+
+.message-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 70px 50px;
+
+    background: white;
+
+    border: 1px solid #ead9b9;
+
+    box-shadow:
+        0 30px 80px rgba(91,16,27,.08);
+}
+
+.message-decoration {
+    position: absolute;
+
+    top: -20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--dark-maroon);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-box h2 {
+    color: var(--maroon);
+}
+
+.message-box p {
+    color: #755d60;
+
+    line-height: 2;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.special-message {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px !important;
+
+    color: var(--maroon) !important;
+}
+
+.signature {
+    margin-top: 40px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: #76575b;
+}
+
+.signature strong {
+    display: block;
+
+    color: var(--red);
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-section {
+    min-height: 70vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #71121f,
+            #420810
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+.surprise-content {
+    max-width: 700px;
+
+    padding: 60px 20px;
+}
+
+.surprise-content h2 span {
+    color: var(--gold);
+}
+
+.surprise-content p {
+    color: rgba(255,255,255,.65);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #250509;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.footer-rakhi {
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+footer h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+}
+
+footer p {
+    color: rgba(255,255,255,.5);
+
+    font-size: 12px;
+
+    margin: 10px 0 20px;
+}
+
+footer > span {
+    color: rgba(255,255,255,.25);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(20,2,5,.85);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5000;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .4s;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-card {
+    max-width: 520px;
+    width: 90%;
+
+    padding: 55px 40px;
+
+    background: #fffaf1;
+
+    text-align: center;
+
+    position: relative;
+
+    border: 2px solid var(--gold);
+
+    transform: scale(.8);
+
+    transition: .4s;
+}
+
+.popup.active .popup-card {
+    transform: scale(1);
+}
+
+.close-popup {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    background: none;
+
+    font-size: 30px;
+
+    color: var(--maroon);
+}
+
+.gift-icon {
+    font-size: 60px;
+
+    animation: giftBounce 1s infinite alternate;
+
+    margin-bottom: 15px;
+}
+
+.popup-card h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--maroon);
+
+    font-size: 45px;
+
+    margin: 20px 0;
+}
+
+.popup-card p {
+    color: #76575b;
+
+    line-height: 1.8;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.popup-rakhi {
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateSlow {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rakhiFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes giftBounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform:
+            translateY(100vh)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .6;
+    }
+
+    80% {
+        opacity: .6;
+    }
+
+    100% {
+        transform:
+            translateY(-100px)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 100px;
+
+        min-height: 900px;
+    }
+
+    .hero-content {
+        width: 90%;
+
+        margin: auto;
+
+        text-align: center;
+
+        align-self: flex-start;
+
+        padding-top: 100px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-rakhi {
+        width: 300px;
+        height: 300px;
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+        top: 570px;
+    }
+
+    .hero-rakhi {
+        animation: rakhiFloatMobile 5s ease-in-out infinite;
+    }
+
+    .rakhi-outer {
+        width: 220px;
+        height: 220px;
+    }
+
+    .rakhi-middle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .rakhi-center {
+        width: 85px;
+        height: 85px;
+
+        font-size: 30px;
+    }
+
+    .brothers-container {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+    .brother-card.featured {
+        transform: none;
+    }
+
+    .brother-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    .memory-content {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-rakhi {
+        margin-top: 40px;
+    }
+
+}
+
+
+@keyframes rakhiFloatMobile {
+
+    0%,100% {
+        transform:
+            translateX(50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(50%)
+            translateY(-15px);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .intro,
+    .brothers-section,
+    .memory {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .message-box {
+        padding: 60px 25px;
+    }
+
+    .message-box h2,
+    .popup-card h2 {
+        font-size: 38px;
+    }
+
+    .memory-points {
+        gap: 25px;
+    }
+
+    .hero-rakhi {
+        top: 590px;
+    }
+
+}
