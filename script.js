@@ -116,13 +116,7 @@ const messages = {
             "Dad, before anyone else taught me what protection, strength and unconditional love meant, you were already there. Thank you for everything you have done, everything you continue to do and for always being my strongest support. I may not say it enough, but I am incredibly lucky to have you. Happy Raksha Bandhan, Dad. ❤️"
 
     },
-    // jimit: {
-    //     name: "Jimit",
-    //     label: "For My Brother",
-    //     rakhi: "rakhi-jimit",
-    //     message:
-    //         "Jimit, every family has those special bonds filled with laughter, memories and countless little moments. I am grateful for all the memories we share and for having you as a part of this beautiful family. Keep smiling, keep shining and always stay the same. Happy Raksha Bandhan! ❤️"
-    // },
+
 
     tanaya: {
 
